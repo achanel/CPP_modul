@@ -23,10 +23,10 @@ int Fixed::getRawBits() const
     return fixedPoint;
 }
 
-void    Fixed::setRawBits(int m_fixedPoint)
+void    Fixed::setRawBits(int raw)
 {
     std::cout << "setRawBits member function called\n";
-    fixedPoint = m_fixedPoint;
+    fixedPoint = raw;
 }
 
 Fixed::~Fixed()
