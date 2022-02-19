@@ -10,10 +10,6 @@ private:
 public:
     DiamondTrap();
     DiamondTrap(std::string name);
-    // const   std::string &getName(void) const;
-    // int     getHit_points(void) const;
-    // int     getEnergy(void) const;
-    // int     getAttack_damage(void) const;
     DiamondTrap(const DiamondTrap &copy);
     DiamondTrap&  operator= (const DiamondTrap &other);
     using   ScavTrap::attack;
