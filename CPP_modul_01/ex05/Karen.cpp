@@ -39,14 +39,22 @@ void Karen::complain( std::string level )
             break;
         i++;
     }
-    if (i == 0)
-        (this->*debugPtr)();
-    else if (i == 1)
-        (this->*infoPtr)();
-    else if (i == 2)
-        (this->*warningPtr)();
-    else if (i == 3)
-        (this->*errorPtr)();
-    else
-        std::cout << "Error: Wrong level!\n";
+	switch (i)
+	{
+		case 0:
+			(this->*debugPtr)();
+			break;
+		case 1:
+			(this->*infoPtr)();
+			break;
+		case 2:
+			(this->*warningPtr)();
+			break;
+		case 3:
+			(this->*errorPtr)();
+			break;
+		default:
+			std::cout << "Error: Wrong level!\n";
+			break;
+	}
 }

@@ -22,5 +22,4 @@ public:
     ~Fixed();
 };
 
-
 #endif
