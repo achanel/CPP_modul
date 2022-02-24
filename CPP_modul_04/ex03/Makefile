@@ -4,8 +4,8 @@ CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 RM		=	rm -f
 
-HEAD	=	ClapTrap.hpp
-SRCS	=	main.cpp ClapTrap.cpp
+HEAD	=	$(wildcard *.hpp)
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 
 %.o		:	%.cpp
