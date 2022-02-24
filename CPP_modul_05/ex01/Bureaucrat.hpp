@@ -21,6 +21,7 @@ public:
 	std::string	getName() const;
 	Bureaucrat &operator++();
 	Bureaucrat &operator--();
+	void	signForm();
 	class GradeTooHighException : public std::exception
 	{
 		public:
