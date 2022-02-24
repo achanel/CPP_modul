@@ -24,7 +24,7 @@ void Cure::use(ICharacter &target)
 
 AMateria *Cure::clone() const
 {
-    Cure    *tmp = new Cure();
+    Cure *tmp = new Cure();
     *tmp = *this;
     return tmp;
 }
