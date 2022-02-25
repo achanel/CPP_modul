@@ -19,7 +19,6 @@ int	main(void)
 		Bureaucrat c;
 		std::cout << c << std::endl;
 		--c;
-		std::cout << c << std::endl;
 	}
 	catch(const std::exception & e)
 	{
@@ -31,7 +30,6 @@ int	main(void)
 		Bureaucrat d("third", 1);
 		std::cout << d << std::endl;
 		++d;
-		std::cout << d << std::endl;
 	}
 	catch(const std::exception & e)
 	{

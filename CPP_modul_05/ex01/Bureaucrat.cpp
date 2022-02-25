@@ -37,7 +37,7 @@ void	Bureaucrat::setGrade(int Grade)
 	this->grade = Grade;
 }
 
-int	Bureaucrat::getGrade() const
+unsigned int	Bureaucrat::getGrade() const
 {
 	return this->grade;
 }
@@ -71,9 +71,17 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return "Grade is too low!";
 }
 
+std::string	Bureaucrat::signForm(bool isSigned, std::string name)
+{
+	if (isSigned)
+		return "Bureaucrat " + this->name + " signed form " + name;
+	else
+		return "Bureaucrat " + this->name + " can't signed form " + name + " because ";
+}
+
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Desttructor called\n";
+	std::cout << "Destructor called\n";
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)

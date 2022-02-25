@@ -9,19 +9,19 @@
 class Bureaucrat
 {
 private:
-	const std::string	name;
-	int			grade;
+	std::string	name;
+	unsigned int			grade;
 public:
 	Bureaucrat();
 	Bureaucrat(std::string Name, int Grade);
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat&  operator= (const Bureaucrat &other);
 	void	setGrade(int Grade);
-	int	getGrade() const;
+	unsigned int	getGrade() const;
 	std::string	getName() const;
 	Bureaucrat &operator++();
 	Bureaucrat &operator--();
-	void	signForm();
+	std::string	signForm(bool isSigned, std::string name);
 	class GradeTooHighException : public std::exception
 	{
 		public:

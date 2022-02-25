@@ -37,7 +37,7 @@ void	Bureaucrat::setGrade(int Grade)
 	this->grade = Grade;
 }
 
-int	Bureaucrat::getGrade() const
+unsigned int	Bureaucrat::getGrade() const
 {
 	return this->grade;
 }
@@ -73,7 +73,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Desttructor called\n";
+	std::cout << "Destructor called\n";
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b)
