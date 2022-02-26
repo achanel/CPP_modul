@@ -16,7 +16,7 @@ public:
 
     virtual void    makeSound() const = 0;
     virtual const std::string   &getType() const;
-	virtual	Brain *getBrain( void ) const = 0;
+	virtual	Brain	*getBrain( void ) const = 0;
     virtual ~Animal();
 };
 

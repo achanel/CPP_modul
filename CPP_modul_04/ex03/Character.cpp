@@ -38,13 +38,13 @@ const std::string &Character::getName() const
 	return name;
 }
 
-void	Character::equip(AMateria* materia)
+void	Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; ++i)
 	{
-		if (array[i] == materia)
+		if (array[i] == m)
 		{
-			std::cout << name << " already has " << materia->getType() << std::endl;
+			std::cout << name << " already has " << m->getType() << std::endl;
 			return ;
 		}
 	}
@@ -52,23 +52,23 @@ void	Character::equip(AMateria* materia)
 	{
 		if (!array[i])
 		{
-			array[i] = materia;
-			std::cout << name << " gas taken " << materia->getType() << std::endl;
+			array[i] = m;
+			std::cout << name << " has taken " << m->getType() << std::endl;
 			return ;
 		}
 	}
 }
 
-void	Character::unequip(int	index)
+void	Character::unequip(int idx)
 {
-	if (array[index])
-		array[index] = NULL;
+	if (array[idx])
+		array[idx] = NULL;
 }
 
-void	Character::use(int index, ICharacter &target)
+void	Character::use(int idx, ICharacter &target)
 {
-	if (array[index])
-		array[index]->use(target);
+	if (array[idx])
+		array[idx]->use(target);
 }
 
 Character::~Character()

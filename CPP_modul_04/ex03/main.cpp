@@ -20,5 +20,7 @@ int     main(void)
     delete bob;
     delete me;
     delete src;
+	std::cout << "-------------------------------------------\n";
+	system("leaks Materia");
     return 0;
 }

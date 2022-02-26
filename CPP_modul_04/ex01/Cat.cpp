@@ -8,11 +8,24 @@ Cat::Cat(void) : Animal("Cat")
 
 Cat::Cat(const Cat &copy)
 {
-    *this = copy;
+    type = copy.getType();
+	if (copy.getBrain())
+	{
+		brain = new Brain(*(copy.getBrain()));
+		std::cout << "Brain was copied\n";
+	}
+	else
+		std::cout << "Can't copy brain\n";
 }
 
 Cat&  Cat::operator= (const Cat &other)
 {
+	if (this == &other)
+		return (*this);
+	if (this->brain)
+		delete this->brain;
+	this->brain = new Brain();
+	this->brain = other.brain;
     this->type = other.type;
     return (*this);
 }

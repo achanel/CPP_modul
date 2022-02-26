@@ -1,7 +1,7 @@
-NAME	=	Intern
+NAME	=	Requests
 
 CC		=	c++
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
+CFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
 RM		=	rm -f
 
 HEAD	=	$(wildcard *.hpp)

@@ -31,6 +31,16 @@ int main()
 		delete Array[i];
 		std::cout << "-------------------------------------------\n";
 	}
+	// Dog *A = new Dog();
+	// Dog *B = new Dog();
+	// std::cout << static_cast<void*>(A->getBrain()) << std::endl;
+	// std::cout << static_cast<void*>(B->getBrain()) << std::endl;
+	// *A = *B;
+	// std::cout << static_cast<void*>(A->getBrain()) << std::endl;
+	// std::cout << static_cast<void*>(B->getBrain()) << std::endl;
+	// delete A;
+	// // delete B;
+	// std::cout << "-------------------------------------------\n";
 	system("leaks Brain");
 	return 0;
 }

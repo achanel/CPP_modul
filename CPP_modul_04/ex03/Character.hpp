@@ -14,9 +14,9 @@ public:
         Character(const Character &copy);
         Character&  operator= (const Character &other);
 		const std::string &getName() const;
-		void	equip(AMateria* materia);
-		void	unequip(int	index);
-		void	use(int index, ICharacter &target);
+		void	equip(AMateria* m);
+		void	unequip(int	idx);
+		void	use(int idx, ICharacter &target);
         ~Character();
 };
 

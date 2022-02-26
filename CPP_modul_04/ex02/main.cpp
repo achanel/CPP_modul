@@ -31,6 +31,6 @@ int main()
 		delete Array[i];
 		std::cout << "-------------------------------------------\n";
 	}
-	system("leaks Brain");
+	system("leaks Abstract");
 	return 0;
 }

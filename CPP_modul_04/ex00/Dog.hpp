@@ -12,7 +12,7 @@ public:
 
     void    makeSound() const;
     const std::string   &getType() const;
-    virtual ~Dog();
+    ~Dog();
 };
 
 #endif
