@@ -52,13 +52,25 @@ Base * generate(void)
 void identify(Base* p)
 {
 	if (dynamic_cast<A*>(p))
+	{
 		cout << YELLOW << "A\n" << COLOR;
+		cout << BLUE << p << COLOR << endl;
+	}
 	else if (dynamic_cast<B*>(p))
+	{
 		cout << YELLOW << "B\n" << COLOR;
+		cout << BLUE << p << COLOR << endl;
+	}
 	else if (dynamic_cast<C*>(p))
+	{
 		cout << YELLOW << "C\n" << COLOR;
+		cout << BLUE << p << COLOR << endl;
+	}
 	else
+	{
 		cout << RED << "Bad cast\n" << COLOR;
+		cout << BLUE << p << COLOR << endl;
+	}
 }
 
 void identify(Base& p)
@@ -67,18 +79,21 @@ void identify(Base& p)
 	{
 		(void)dynamic_cast<A&>(p);
 		cout << YELLOW << "A\n" << COLOR;
+		cout << BLUE << &p << COLOR << endl;
 	}
 	catch(bad_cast) {}
 	try
 	{
 		(void)dynamic_cast<B&>(p);
 		cout << YELLOW << "B\n" << COLOR;
+		cout << BLUE << &p << COLOR << endl;
 	}
 	catch(bad_cast) {}
 	try
 	{
 		(void)dynamic_cast<C&>(p);
 		cout << YELLOW << "C\n" << COLOR;
+		cout << BLUE << &p << COLOR << endl;
 	}
 	catch(bad_cast) {}
 }
