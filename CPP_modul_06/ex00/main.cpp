@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 	{
 		char c = static_cast<char>(stoi(av[1]));
 		if (isprint(c))
-			cout << GREEN << "char: " << c << COLOR << endl;
+			cout << GREEN << "char: '" << c << "'" << COLOR << endl;
 		else
 			cout << YELLOW << "char: Non displayable\n" << COLOR;
 	}
@@ -36,7 +36,12 @@ int	main(int ac, char **av)
 	try
 	{
 		float f = static_cast<float>(stof(av[1]));
-		cout << GREEN << "float: " << f << COLOR << endl;
+		cout.precision(1);
+		cout << fixed << GREEN << "float: " << f << "f" << COLOR << endl;
+	}
+	catch (out_of_range &outOfRange)
+	{
+		cout << GREEN << "float: " << numeric_limits<float>::infinity() << "f" << COLOR << endl;
 	}
 	catch(const exception& e)
 	{
@@ -45,7 +50,12 @@ int	main(int ac, char **av)
 	try
 	{
 		float d = static_cast<double>(stod(av[1]));
-		cout << GREEN << "float: " << d << COLOR << endl;
+		cout.precision(1);
+		cout << fixed << GREEN << "double: " << d << COLOR << endl;
+	}
+	catch (out_of_range &outOfRange)
+	{
+		cout << GREEN << "double: " << numeric_limits<double>::infinity() << COLOR << endl;
 	}
 	catch(const exception& e)
 	{

@@ -1,7 +1,7 @@
 NAME	=	Conversion
 
 CC		=	c++
-CFLAGS	=	-std=c++98 -Wall -Wextra -Werror -g
+CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 RM		=	rm -f
 
 HEAD	=	$(wildcard *.hpp)
