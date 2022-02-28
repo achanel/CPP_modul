@@ -1,7 +1,7 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 20
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -12,6 +12,8 @@ int main(int, char**)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
+        std::cout << numbers[i] << '\t';
+        std::cout << mirror[i] << std::endl;
     }
     //SCOPE
     {
@@ -29,6 +31,7 @@ int main(int, char**)
     }
     try
     {
+        std::cout << "out of range\n";
         numbers[-2] = 0;
     }
     catch(const std::exception& e)
@@ -49,5 +52,6 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+    system("leaks Array");
     return 0;
 }
