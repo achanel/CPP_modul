@@ -32,15 +32,21 @@ Span::~Span()
 
 int Span::shortestSpan()
 {
-    int res = INT_MAX;
-    int diff;
+    int span;
+
     if (array->size() < 2)
         throw SpanIsShort();
-    for (size_t i = 0; i < array->size() - 1; ++i)
-        diff = ::abs((*array)[i] - (*array)[i + 1]);
-    if (diff < res)
-        res = diff;
-    return res;
+    for (vector<int>::iterator i = array->begin(); i + 1 < array->end(); i++)
+	{
+		if (i == array->begin())
+			span = abs(*(i + 1) - *i);
+		for (vector<int>::iterator j = i + 1; j != array->end(); j++)
+		{
+        	if (span > abs(*j - *i))
+				span = abs(*j - *i);
+		}
+	}
+    return span;
 }
 
 int Span::longestSpan()
@@ -68,7 +74,7 @@ void    Span::addNumber(::vector<int>::iterator start, ::vector<int>::iterator e
 {
     size_t  dst = ::distance(start, end);
     if (dst > _N)
-        throw ::out_of_range("Out of range!\n");
+        throw ::out_of_range("Out of range!");
     array->insert(array->begin(), start, end);
 }
 

@@ -10,10 +10,11 @@ int main(void)
 {
     ::vector<int> vector;
     ::vector<int>::iterator vIter;
-    int n = -1;
+    int n = 2;
     cout << "n: " << n << endl;
-    for (int i = -20; i < 20; ++i)
-        vector.push_back(i);
+	srand(time(NULL));
+    for (int i = 0; i < 10; ++i)
+        vector.push_back(rand() % 10);
     for (vIter = vector.begin(); vIter != vector.end(); ++vIter)
         cout << YELLOW << *vIter << COLOR << ' ';
     cout << endl;
